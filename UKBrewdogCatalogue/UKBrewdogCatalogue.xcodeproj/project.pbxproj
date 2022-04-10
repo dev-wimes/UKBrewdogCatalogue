@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04EEF25E280326CE00E9B650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF25D280326CE00E9B650 /* AppDelegate.swift */; };
+		04EEF260280326CE00E9B650 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF25F280326CE00E9B650 /* SceneDelegate.swift */; };
+		04EEF262280326CE00E9B650 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF261280326CE00E9B650 /* ViewController.swift */; };
+		04EEF265280326CE00E9B650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EEF263280326CE00E9B650 /* Main.storyboard */; };
+		04EEF267280326CF00E9B650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EEF266280326CF00E9B650 /* Assets.xcassets */; };
+		04EEF26A280326CF00E9B650 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EEF268280326CF00E9B650 /* LaunchScreen.storyboard */; };
+		04EEF275280326CF00E9B650 /* UKBrewdogCatalogueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF274280326CF00E9B650 /* UKBrewdogCatalogueTests.swift */; };
+		04EEF27F280326CF00E9B650 /* UKBrewdogCatalogueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF27E280326CF00E9B650 /* UKBrewdogCatalogueUITests.swift */; };
+		04EEF281280326CF00E9B650 /* UKBrewdogCatalogueUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF280280326CF00E9B650 /* UKBrewdogCatalogueUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04EEF271280326CF00E9B650 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04EEF252280326CE00E9B650 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04EEF259280326CE00E9B650;
+			remoteInfo = UKBrewdogCatalogue;
+		};
+		04EEF27B280326CF00E9B650 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04EEF252280326CE00E9B650 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04EEF259280326CE00E9B650;
+			remoteInfo = UKBrewdogCatalogue;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04EEF25A280326CE00E9B650 /* UKBrewdogCatalogue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UKBrewdogCatalogue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04EEF25D280326CE00E9B650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04EEF25F280326CE00E9B650 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		04EEF261280326CE00E9B650 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04EEF264280326CE00E9B650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04EEF266280326CF00E9B650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04EEF269280326CF00E9B650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04EEF26B280326CF00E9B650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04EEF270280326CF00E9B650 /* UKBrewdogCatalogueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UKBrewdogCatalogueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04EEF274280326CF00E9B650 /* UKBrewdogCatalogueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKBrewdogCatalogueTests.swift; sourceTree = "<group>"; };
+		04EEF27A280326CF00E9B650 /* UKBrewdogCatalogueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UKBrewdogCatalogueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04EEF27E280326CF00E9B650 /* UKBrewdogCatalogueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKBrewdogCatalogueUITests.swift; sourceTree = "<group>"; };
+		04EEF280280326CF00E9B650 /* UKBrewdogCatalogueUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKBrewdogCatalogueUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04EEF257280326CE00E9B650 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04EEF26D280326CF00E9B650 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04EEF277280326CF00E9B650 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04EEF251280326CE00E9B650 = {
+			isa = PBXGroup;
+			children = (
+				04EEF25C280326CE00E9B650 /* UKBrewdogCatalogue */,
+				04EEF273280326CF00E9B650 /* UKBrewdogCatalogueTests */,
+				04EEF27D280326CF00E9B650 /* UKBrewdogCatalogueUITests */,
+				04EEF25B280326CE00E9B650 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04EEF25B280326CE00E9B650 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF25A280326CE00E9B650 /* UKBrewdogCatalogue.app */,
+				04EEF270280326CF00E9B650 /* UKBrewdogCatalogueTests.xctest */,
+				04EEF27A280326CF00E9B650 /* UKBrewdogCatalogueUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04EEF25C280326CE00E9B650 /* UKBrewdogCatalogue */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF25D280326CE00E9B650 /* AppDelegate.swift */,
+				04EEF25F280326CE00E9B650 /* SceneDelegate.swift */,
+				04EEF261280326CE00E9B650 /* ViewController.swift */,
+				04EEF263280326CE00E9B650 /* Main.storyboard */,
+				04EEF266280326CF00E9B650 /* Assets.xcassets */,
+				04EEF268280326CF00E9B650 /* LaunchScreen.storyboard */,
+				04EEF26B280326CF00E9B650 /* Info.plist */,
+			);
+			path = UKBrewdogCatalogue;
+			sourceTree = "<group>";
+		};
+		04EEF273280326CF00E9B650 /* UKBrewdogCatalogueTests */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF274280326CF00E9B650 /* UKBrewdogCatalogueTests.swift */,
+			);
+			path = UKBrewdogCatalogueTests;
+			sourceTree = "<group>";
+		};
+		04EEF27D280326CF00E9B650 /* UKBrewdogCatalogueUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF27E280326CF00E9B650 /* UKBrewdogCatalogueUITests.swift */,
+				04EEF280280326CF00E9B650 /* UKBrewdogCatalogueUITestsLaunchTests.swift */,
+			);
+			path = UKBrewdogCatalogueUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04EEF259280326CE00E9B650 /* UKBrewdogCatalogue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04EEF284280326CF00E9B650 /* Build configuration list for PBXNativeTarget "UKBrewdogCatalogue" */;
+			buildPhases = (
+				04EEF256280326CE00E9B650 /* Sources */,
+				04EEF257280326CE00E9B650 /* Frameworks */,
+				04EEF258280326CE00E9B650 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UKBrewdogCatalogue;
+			productName = UKBrewdogCatalogue;
+			productReference = 04EEF25A280326CE00E9B650 /* UKBrewdogCatalogue.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04EEF26F280326CF00E9B650 /* UKBrewdogCatalogueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04EEF287280326CF00E9B650 /* Build configuration list for PBXNativeTarget "UKBrewdogCatalogueTests" */;
+			buildPhases = (
+				04EEF26C280326CF00E9B650 /* Sources */,
+				04EEF26D280326CF00E9B650 /* Frameworks */,
+				04EEF26E280326CF00E9B650 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04EEF272280326CF00E9B650 /* PBXTargetDependency */,
+			);
+			name = UKBrewdogCatalogueTests;
+			productName = UKBrewdogCatalogueTests;
+			productReference = 04EEF270280326CF00E9B650 /* UKBrewdogCatalogueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04EEF279280326CF00E9B650 /* UKBrewdogCatalogueUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04EEF28A280326CF00E9B650 /* Build configuration list for PBXNativeTarget "UKBrewdogCatalogueUITests" */;
+			buildPhases = (
+				04EEF276280326CF00E9B650 /* Sources */,
+				04EEF277280326CF00E9B650 /* Frameworks */,
+				04EEF278280326CF00E9B650 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04EEF27C280326CF00E9B650 /* PBXTargetDependency */,
+			);
+			name = UKBrewdogCatalogueUITests;
+			productName = UKBrewdogCatalogueUITests;
+			productReference = 04EEF27A280326CF00E9B650 /* UKBrewdogCatalogueUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04EEF252280326CE00E9B650 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					04EEF259280326CE00E9B650 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					04EEF26F280326CF00E9B650 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 04EEF259280326CE00E9B650;
+					};
+					04EEF279280326CF00E9B650 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 04EEF259280326CE00E9B650;
+					};
+				};
+			};
+			buildConfigurationList = 04EEF255280326CE00E9B650 /* Build configuration list for PBXProject "UKBrewdogCatalogue" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04EEF251280326CE00E9B650;
+			productRefGroup = 04EEF25B280326CE00E9B650 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04EEF259280326CE00E9B650 /* UKBrewdogCatalogue */,
+				04EEF26F280326CF00E9B650 /* UKBrewdogCatalogueTests */,
+				04EEF279280326CF00E9B650 /* UKBrewdogCatalogueUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04EEF258280326CE00E9B650 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04EEF26A280326CF00E9B650 /* LaunchScreen.storyboard in Resources */,
+				04EEF267280326CF00E9B650 /* Assets.xcassets in Resources */,
+				04EEF265280326CE00E9B650 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04EEF26E280326CF00E9B650 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04EEF278280326CF00E9B650 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04EEF256280326CE00E9B650 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04EEF262280326CE00E9B650 /* ViewController.swift in Sources */,
+				04EEF25E280326CE00E9B650 /* AppDelegate.swift in Sources */,
+				04EEF260280326CE00E9B650 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04EEF26C280326CF00E9B650 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04EEF275280326CF00E9B650 /* UKBrewdogCatalogueTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04EEF276280326CF00E9B650 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04EEF27F280326CF00E9B650 /* UKBrewdogCatalogueUITests.swift in Sources */,
+				04EEF281280326CF00E9B650 /* UKBrewdogCatalogueUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04EEF272280326CF00E9B650 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04EEF259280326CE00E9B650 /* UKBrewdogCatalogue */;
+			targetProxy = 04EEF271280326CF00E9B650 /* PBXContainerItemProxy */;
+		};
+		04EEF27C280326CF00E9B650 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04EEF259280326CE00E9B650 /* UKBrewdogCatalogue */;
+			targetProxy = 04EEF27B280326CF00E9B650 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04EEF263280326CE00E9B650 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04EEF264280326CE00E9B650 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04EEF268280326CF00E9B650 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04EEF269280326CF00E9B650 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04EEF282280326CF00E9B650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04EEF283280326CF00E9B650 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04EEF285280326CF00E9B650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UKBrewdogCatalogue/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wimes.UKBrewdogCatalogue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04EEF286280326CF00E9B650 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UKBrewdogCatalogue/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wimes.UKBrewdogCatalogue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		04EEF288280326CF00E9B650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wimes.UKBrewdogCatalogueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UKBrewdogCatalogue.app/UKBrewdogCatalogue";
+			};
+			name = Debug;
+		};
+		04EEF289280326CF00E9B650 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wimes.UKBrewdogCatalogueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UKBrewdogCatalogue.app/UKBrewdogCatalogue";
+			};
+			name = Release;
+		};
+		04EEF28B280326CF00E9B650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wimes.UKBrewdogCatalogueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UKBrewdogCatalogue;
+			};
+			name = Debug;
+		};
+		04EEF28C280326CF00E9B650 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wimes.UKBrewdogCatalogueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = UKBrewdogCatalogue;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04EEF255280326CE00E9B650 /* Build configuration list for PBXProject "UKBrewdogCatalogue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04EEF282280326CF00E9B650 /* Debug */,
+				04EEF283280326CF00E9B650 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04EEF284280326CF00E9B650 /* Build configuration list for PBXNativeTarget "UKBrewdogCatalogue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04EEF285280326CF00E9B650 /* Debug */,
+				04EEF286280326CF00E9B650 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04EEF287280326CF00E9B650 /* Build configuration list for PBXNativeTarget "UKBrewdogCatalogueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04EEF288280326CF00E9B650 /* Debug */,
+				04EEF289280326CF00E9B650 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04EEF28A280326CF00E9B650 /* Build configuration list for PBXNativeTarget "UKBrewdogCatalogueUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04EEF28B280326CF00E9B650 /* Debug */,
+				04EEF28C280326CF00E9B650 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04EEF252280326CE00E9B650 /* Project object */;
+}
