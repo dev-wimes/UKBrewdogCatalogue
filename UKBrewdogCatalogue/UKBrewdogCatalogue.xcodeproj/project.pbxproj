@@ -14,6 +14,7 @@
 		04EEF275280326CF00E9B650 /* UKBrewdogCatalogueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF274280326CF00E9B650 /* UKBrewdogCatalogueTests.swift */; };
 		04EEF27F280326CF00E9B650 /* UKBrewdogCatalogueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF27E280326CF00E9B650 /* UKBrewdogCatalogueUITests.swift */; };
 		04EEF281280326CF00E9B650 /* UKBrewdogCatalogueUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF280280326CF00E9B650 /* UKBrewdogCatalogueUITestsLaunchTests.swift */; };
+		04EEF2912803297400E9B650 /* ProxyModule in Frameworks */ = {isa = PBXBuildFile; productRef = 04EEF2902803297400E9B650 /* ProxyModule */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		04EEF27A280326CF00E9B650 /* UKBrewdogCatalogueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UKBrewdogCatalogueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EEF27E280326CF00E9B650 /* UKBrewdogCatalogueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKBrewdogCatalogueUITests.swift; sourceTree = "<group>"; };
 		04EEF280280326CF00E9B650 /* UKBrewdogCatalogueUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKBrewdogCatalogueUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04EEF28E2803296000E9B650 /* ProxyModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProxyModule; path = ../ProxyModule; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EEF2912803297400E9B650 /* ProxyModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,10 +78,12 @@
 		04EEF251280326CE00E9B650 = {
 			isa = PBXGroup;
 			children = (
+				04EEF28D2803296000E9B650 /* Packages */,
 				04EEF25C280326CE00E9B650 /* UKBrewdogCatalogue */,
 				04EEF273280326CF00E9B650 /* UKBrewdogCatalogueTests */,
 				04EEF27D280326CF00E9B650 /* UKBrewdogCatalogueUITests */,
 				04EEF25B280326CE00E9B650 /* Products */,
+				04EEF28F2803297400E9B650 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +126,21 @@
 			path = UKBrewdogCatalogueUITests;
 			sourceTree = "<group>";
 		};
+		04EEF28D2803296000E9B650 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF28E2803296000E9B650 /* ProxyModule */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		04EEF28F2803297400E9B650 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +157,9 @@
 			dependencies = (
 			);
 			name = UKBrewdogCatalogue;
+			packageProductDependencies = (
+				04EEF2902803297400E9B650 /* ProxyModule */,
+			);
 			productName = UKBrewdogCatalogue;
 			productReference = 04EEF25A280326CE00E9B650 /* UKBrewdogCatalogue.app */;
 			productType = "com.apple.product-type.application";
@@ -580,6 +603,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04EEF2902803297400E9B650 /* ProxyModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ProxyModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04EEF252280326CE00E9B650 /* Project object */;
 }
