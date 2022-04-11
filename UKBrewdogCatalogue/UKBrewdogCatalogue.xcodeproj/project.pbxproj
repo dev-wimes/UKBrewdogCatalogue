@@ -15,6 +15,10 @@
 		04EEF27F280326CF00E9B650 /* UKBrewdogCatalogueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF27E280326CF00E9B650 /* UKBrewdogCatalogueUITests.swift */; };
 		04EEF281280326CF00E9B650 /* UKBrewdogCatalogueUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF280280326CF00E9B650 /* UKBrewdogCatalogueUITestsLaunchTests.swift */; };
 		04EEF2912803297400E9B650 /* ProxyModule in Frameworks */ = {isa = PBXBuildFile; productRef = 04EEF2902803297400E9B650 /* ProxyModule */; };
+		04EEF2992804673E00E9B650 /* BrewdogCategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2982804673E00E9B650 /* BrewdogCategoryAPI.swift */; };
+		04EEF29B2804694D00E9B650 /* BeersQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF29A2804694D00E9B650 /* BeersQ.swift */; };
+		04EEF29D280469B100E9B650 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF29C280469B100E9B650 /* BaseRepository.swift */; };
+		04EEF29F28046B2D00E9B650 /* Beers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF29E28046B2D00E9B650 /* Beers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		04EEF27E280326CF00E9B650 /* UKBrewdogCatalogueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKBrewdogCatalogueUITests.swift; sourceTree = "<group>"; };
 		04EEF280280326CF00E9B650 /* UKBrewdogCatalogueUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UKBrewdogCatalogueUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		04EEF28E2803296000E9B650 /* ProxyModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ProxyModule; path = ../ProxyModule; sourceTree = "<group>"; };
+		04EEF2982804673E00E9B650 /* BrewdogCategoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewdogCategoryAPI.swift; sourceTree = "<group>"; };
+		04EEF29A2804694D00E9B650 /* BeersQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersQ.swift; sourceTree = "<group>"; };
+		04EEF29C280469B100E9B650 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		04EEF29E28046B2D00E9B650 /* Beers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,9 @@
 		04EEF25C280326CE00E9B650 /* UKBrewdogCatalogue */ = {
 			isa = PBXGroup;
 			children = (
+				04EEF2972804670E00E9B650 /* Scene */,
+				04EEF296280466EC00E9B650 /* Entity */,
+				04EEF292280466C300E9B650 /* Data */,
 				04EEF25D280326CE00E9B650 /* AppDelegate.swift */,
 				04EEF261280326CE00E9B650 /* ViewController.swift */,
 				04EEF266280326CF00E9B650 /* Assets.xcassets */,
@@ -139,6 +150,55 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04EEF292280466C300E9B650 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF295280466E700E9B650 /* Repository */,
+				04EEF294280466E300E9B650 /* API */,
+				04EEF293280466D700E9B650 /* Parameter */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		04EEF293280466D700E9B650 /* Parameter */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF29A2804694D00E9B650 /* BeersQ.swift */,
+			);
+			path = Parameter;
+			sourceTree = "<group>";
+		};
+		04EEF294280466E300E9B650 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF2982804673E00E9B650 /* BrewdogCategoryAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		04EEF295280466E700E9B650 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF29C280469B100E9B650 /* BaseRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		04EEF296280466EC00E9B650 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF29E28046B2D00E9B650 /* Beers.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		04EEF2972804670E00E9B650 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +335,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				04EEF262280326CE00E9B650 /* ViewController.swift in Sources */,
+				04EEF29F28046B2D00E9B650 /* Beers.swift in Sources */,
+				04EEF29B2804694D00E9B650 /* BeersQ.swift in Sources */,
 				04EEF25E280326CE00E9B650 /* AppDelegate.swift in Sources */,
+				04EEF29D280469B100E9B650 /* BaseRepository.swift in Sources */,
+				04EEF2992804673E00E9B650 /* BrewdogCategoryAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
