@@ -1,0 +1,119 @@
+//
+//  HomeViewController.swift
+//  UKBrewdogCatalogue
+//
+//  Created by Wimes on 2022/04/10.
+//
+
+import UIKit
+
+import RxSwift
+import RxRelay
+import RxDataSources
+
+final class HomeViewController: UIViewController {
+  private let disposeBag = DisposeBag()
+  
+  private let viewModel = HomeViewModel()
+  private let viewDidLoadTrigger = PublishRelay<Void>()
+  
+  private lazy var collectionView: UICollectionView = {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .vertical
+    
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    return collectionView
+  }()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    self.setupViews()
+    self.bind()
+    
+    self.viewDidLoadTrigger.accept(())
+  }
+  
+  private func setupViews() {
+    self.view.addSubview(self.collectionView)
+    self.collectionView.register(
+      HomeBeersHeaderView.self,
+      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+      withReuseIdentifier: HomeBeersHeaderView.ID
+    )
+    self.collectionView.register(HomeBeersCell.self, forCellWithReuseIdentifier: HomeBeersCell.ID)
+    
+    self.collectionView.rx
+      .setDelegate(self)
+      .disposed(by: self.disposeBag)
+    
+    self.collectionView.snp.makeConstraints { make in
+      make.top.bottom.leading.trailing.equalToSuperview()
+    }
+  }
+  
+  private func bind() {
+    let output = self.viewModel
+      .transform(input: .init(viewDidLoadTrigger: self.viewDidLoadTrigger))
+    
+    output.fetchedBeers
+      .drive(self.collectionView.rx.items(dataSource: HomeViewController.dataSource))
+      .disposed(by: self.disposeBag)
+  }
+}
+
+extension HomeViewController {
+  static var dataSource: RxCollectionViewSectionedReloadDataSource<BeersSectionModel> {
+    let configureCell: (
+      CollectionViewSectionedDataSource<BeersSectionModel>,
+      UICollectionView,
+      IndexPath,
+      BeersSectionModel.Item
+    ) -> UICollectionViewCell = { dataSource, collectionView, indexPath, item in
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBeersCell.ID, for: indexPath) as! HomeBeersCell
+      cell.configure(title: dataSource[indexPath].name)
+      return cell
+    }
+    
+    let supplementrayView: (
+      CollectionViewSectionedDataSource<BeersSectionModel>,
+      UICollectionView,
+      String,
+      IndexPath
+    ) -> UICollectionReusableView = { dataSource, collectionView, kind, indexPath in
+      guard let title = dataSource.sectionModels.first?.header.title else { return UICollectionReusableView()}
+      let view = collectionView.dequeueReusableSupplementaryView(
+        ofKind: kind,
+        withReuseIdentifier: HomeBeersHeaderView.ID,
+        for: indexPath
+      ) as! HomeBeersHeaderView
+      view.configure(title: title)
+      return view
+    }
+    
+    let dataSource = RxCollectionViewSectionedReloadDataSource<BeersSectionModel>.init(
+      configureCell: configureCell,
+      configureSupplementaryView: supplementrayView
+    )
+    
+    return dataSource
+  }
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    return CGSize(width: self.view.frame.width, height: 50)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    return CGSize(width: self.view.frame.width / 2 - 10, height: 50)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return 5.0
+  }
+}

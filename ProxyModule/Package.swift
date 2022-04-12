@@ -14,6 +14,8 @@ let package = Package(
   dependencies: [
     .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.5.0")),
     .package(name: "Moya", url: "https://github.com/Moya/Moya.git", .exact("15.0.0")),
+    .package(url: "https://github.com/RxSwiftCommunity/RxDataSources.git", .upToNextMajor(from: "5.0.0")),
+    .package(url: "https://github.com/SnapKit/SnapKit.git", .upToNextMajor(from: "5.0.0"))
   ],
   targets: [
     .target(
@@ -23,6 +25,8 @@ let package = Package(
         .product(name: "RxCocoa", package: "RxSwift"),
         .product(name: "RxRelay", package: "RxSwift"),
         .product(name: "RxMoya", package: "Moya"),
+        "RxDataSources",
+        "SnapKit"
       ]),
     .testTarget(
       name: "ProxyModuleTests",

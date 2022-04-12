@@ -20,6 +20,10 @@
 		04EEF29D280469B100E9B650 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF29C280469B100E9B650 /* BaseRepository.swift */; };
 		04EEF29F28046B2D00E9B650 /* Beers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF29E28046B2D00E9B650 /* Beers.swift */; };
 		04EEF2A228046DAC00E9B650 /* BeersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2A128046DAC00E9B650 /* BeersRepository.swift */; };
+		04EEF2A428046F8100E9B650 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2A328046F8100E9B650 /* HomeViewModel.swift */; };
+		04EEF2A82805ADD600E9B650 /* BeersSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2A72805ADD600E9B650 /* BeersSectionModel.swift */; };
+		04EEF2AA2805BA9A00E9B650 /* HomeBeersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2A92805BA9A00E9B650 /* HomeBeersCell.swift */; };
+		04EEF2AC2805BAB800E9B650 /* HomeBeersHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2AB2805BAB800E9B650 /* HomeBeersHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		04EEF29C280469B100E9B650 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		04EEF29E28046B2D00E9B650 /* Beers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beers.swift; sourceTree = "<group>"; };
 		04EEF2A128046DAC00E9B650 /* BeersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersRepository.swift; sourceTree = "<group>"; };
+		04EEF2A328046F8100E9B650 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		04EEF2A72805ADD600E9B650 /* BeersSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersSectionModel.swift; sourceTree = "<group>"; };
+		04EEF2A92805BA9A00E9B650 /* HomeBeersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBeersCell.swift; sourceTree = "<group>"; };
+		04EEF2AB2805BAB800E9B650 /* HomeBeersHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBeersHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,9 +207,29 @@
 		04EEF2972804670E00E9B650 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				04EEF261280326CE00E9B650 /* HomeViewController.swift */,
+				04EEF2A528046F8700E9B650 /* Home */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		04EEF2A528046F8700E9B650 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF2A62805ACFB00E9B650 /* CollectionView */,
+				04EEF261280326CE00E9B650 /* HomeViewController.swift */,
+				04EEF2A328046F8100E9B650 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		04EEF2A62805ACFB00E9B650 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF2A72805ADD600E9B650 /* BeersSectionModel.swift */,
+				04EEF2A92805BA9A00E9B650 /* HomeBeersCell.swift */,
+				04EEF2AB2805BAB800E9B650 /* HomeBeersHeaderView.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,10 +368,14 @@
 				04EEF262280326CE00E9B650 /* HomeViewController.swift in Sources */,
 				04EEF29F28046B2D00E9B650 /* Beers.swift in Sources */,
 				04EEF29B2804694D00E9B650 /* BeersQ.swift in Sources */,
+				04EEF2A82805ADD600E9B650 /* BeersSectionModel.swift in Sources */,
+				04EEF2AA2805BA9A00E9B650 /* HomeBeersCell.swift in Sources */,
+				04EEF2A428046F8100E9B650 /* HomeViewModel.swift in Sources */,
 				04EEF25E280326CE00E9B650 /* AppDelegate.swift in Sources */,
 				04EEF29D280469B100E9B650 /* BaseRepository.swift in Sources */,
 				04EEF2A228046DAC00E9B650 /* BeersRepository.swift in Sources */,
 				04EEF2992804673E00E9B650 /* BrewdogCategoryAPI.swift in Sources */,
+				04EEF2AC2805BAB800E9B650 /* HomeBeersHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

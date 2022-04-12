@@ -9,12 +9,12 @@ import Foundation
 import RxSwift
 
 protocol BeersRepository {
-  func fetchBeers(page: Int, perPage: Int) -> Single<Beers>
+  func fetchBeers(page: Int) -> Single<Beers>
 }
 
 final class BeersRepositoryImpl: BaseRepository, BeersRepository {
-  func fetchBeers(page: Int, perPage: Int) -> Single<Beers> {
-    let query = BeersQ(page: page, perPage: perPage)
+  func fetchBeers(page: Int) -> Single<Beers> {
+    let query = BeersQ(page: page)
     
     return self.execute(api: .beers(q: query))
   }
