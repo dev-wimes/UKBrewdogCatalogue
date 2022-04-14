@@ -12,12 +12,6 @@ protocol BeersRepository {
   func fetchBeers(page: Int, perPage: Int) -> Observable<Beers>
 }
 
-//extension BeersRepository {
-//  func fetchBeers(page: Int, perPage: Int = 25) -> Single<Beers> {
-//    self.fetchBeers(page: page, perPage: perPage)
-//  }
-//}
-
 final class BeersRepositoryImpl: BaseRepository, BeersRepository {
   func fetchBeers(page: Int, perPage: Int) -> Observable<Beers> {
     let query = BeersQ(page: page, perPage: perPage)

@@ -35,8 +35,15 @@ final class HomeBeersCell: UICollectionViewCell {
     self.imageRepository.loadImage(url: imageURL)
       .observe(on: MainScheduler.asyncInstance)
       .catch { error in
-        print(error)
-        return .empty()
+        guard let error = error as? ImageRepositoryImpl.ImageRepositoryError else { return .empty() }
+        switch error {
+        case .wrongURLString(url: let url):
+          print("@@ ", url ?? "nil")
+        default:
+          print("@@ ", error)
+        }
+        
+        return Observable.just(UIImage(named: "drunk.gif")!)
       }
       .withUnretained(self)
       .subscribe(onNext: { owner, image in

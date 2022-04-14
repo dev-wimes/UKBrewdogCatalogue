@@ -16,7 +16,7 @@ protocol ImageRepository {
 
 final class ImageRepositoryImpl: BaseRepository, ImageRepository {
   enum ImageRepositoryError: Error {
-    case wrongURLString
+    case wrongURLString(url: String?)
     case dataError
     case imageError
   }
@@ -24,7 +24,7 @@ final class ImageRepositoryImpl: BaseRepository, ImageRepository {
   func loadImage(url: String?) -> Observable<UIImage> {
     guard let urlString = url,
           let url = URL(string: urlString)
-    else { return .error(ImageRepositoryError.wrongURLString) }
+    else { return .error(ImageRepositoryError.wrongURLString(url: url)) }
     
     return Observable<UIImage>.create { observable in
       let task = URLSession.shared.dataTask(with: url) { data, _, _ in

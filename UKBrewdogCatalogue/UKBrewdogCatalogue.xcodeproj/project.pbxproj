@@ -27,6 +27,7 @@
 		04EEF2AE28072A3500E9B650 /* BeerMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2AD28072A3500E9B650 /* BeerMethod.swift */; };
 		04EEF2B028072A5500E9B650 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2AF28072A5500E9B650 /* Ingredients.swift */; };
 		04EEF2B2280840E000E9B650 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2B1280840E000E9B650 /* ImageRepository.swift */; };
+		04EEF2BB28084D6000E9B650 /* drunk.gif in Resources */ = {isa = PBXBuildFile; fileRef = 04EEF2BA28084D6000E9B650 /* drunk.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		04EEF2AD28072A3500E9B650 /* BeerMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerMethod.swift; sourceTree = "<group>"; };
 		04EEF2AF28072A5500E9B650 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		04EEF2B1280840E000E9B650 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		04EEF2BA28084D6000E9B650 /* drunk.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = drunk.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		04EEF251280326CE00E9B650 = {
 			isa = PBXGroup;
 			children = (
+				04EEF2B728084D1500E9B650 /* Resources */,
 				04EEF28D2803296000E9B650 /* Packages */,
 				04EEF25C280326CE00E9B650 /* UKBrewdogCatalogue */,
 				04EEF273280326CF00E9B650 /* UKBrewdogCatalogueTests */,
@@ -241,6 +244,14 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		04EEF2B728084D1500E9B650 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04EEF2BA28084D6000E9B650 /* drunk.gif */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -349,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04EEF26A280326CF00E9B650 /* LaunchScreen.storyboard in Resources */,
+				04EEF2BB28084D6000E9B650 /* drunk.gif in Resources */,
 				04EEF267280326CF00E9B650 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
