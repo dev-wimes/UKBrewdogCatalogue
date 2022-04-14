@@ -13,7 +13,7 @@ import RxSwift
 final class HomeBeersCell: UICollectionViewCell {
   static let ID: String = "HomeBeersCell"
   
-  private let disposeBag = DisposeBag()
+  private var disposeBag = DisposeBag()
   private let imageRepository: ImageRepository = ImageRepositoryImpl()
   private let title = UILabel()
   private let beerImageView = UIImageView()
@@ -68,6 +68,7 @@ final class HomeBeersCell: UICollectionViewCell {
 extension HomeBeersCell {
   override func prepareForReuse() {
     self.beerImageView.image = nil
+    self.disposeBag = .init()
     super.prepareForReuse()
   }
 }
