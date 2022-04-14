@@ -11,9 +11,13 @@ final class HomeBeersHeaderView: UICollectionReusableView {
   static let ID: String = "HomeBeersHeaderView"
   
   private let title = UILabel()
+  private let footerLine = UIView()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
+    
+    self.footerLine.backgroundColor = .black
+    
     self.setupViews()
   }
   
@@ -27,9 +31,15 @@ final class HomeBeersHeaderView: UICollectionReusableView {
   
   private func setupViews() {
     self.addSubview(self.title)
+    self.addSubview(self.footerLine)
     
     self.title.snp.makeConstraints { make in
       make.center.equalToSuperview()
+    }
+    
+    self.footerLine.snp.makeConstraints { make in
+      make.height.equalTo(1)
+      make.width.bottom.centerX.equalToSuperview()
     }
   }
 }

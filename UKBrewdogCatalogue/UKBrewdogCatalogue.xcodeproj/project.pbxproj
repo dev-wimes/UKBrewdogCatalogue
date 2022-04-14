@@ -24,6 +24,9 @@
 		04EEF2A82805ADD600E9B650 /* BeersSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2A72805ADD600E9B650 /* BeersSectionModel.swift */; };
 		04EEF2AA2805BA9A00E9B650 /* HomeBeersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2A92805BA9A00E9B650 /* HomeBeersCell.swift */; };
 		04EEF2AC2805BAB800E9B650 /* HomeBeersHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2AB2805BAB800E9B650 /* HomeBeersHeaderView.swift */; };
+		04EEF2AE28072A3500E9B650 /* BeerMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2AD28072A3500E9B650 /* BeerMethod.swift */; };
+		04EEF2B028072A5500E9B650 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2AF28072A5500E9B650 /* Ingredients.swift */; };
+		04EEF2B2280840E000E9B650 /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF2B1280840E000E9B650 /* ImageRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		04EEF2A72805ADD600E9B650 /* BeersSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersSectionModel.swift; sourceTree = "<group>"; };
 		04EEF2A92805BA9A00E9B650 /* HomeBeersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBeersCell.swift; sourceTree = "<group>"; };
 		04EEF2AB2805BAB800E9B650 /* HomeBeersHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBeersHeaderView.swift; sourceTree = "<group>"; };
+		04EEF2AD28072A3500E9B650 /* BeerMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerMethod.swift; sourceTree = "<group>"; };
+		04EEF2AF28072A5500E9B650 /* Ingredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
+		04EEF2B1280840E000E9B650 /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,7 @@
 			children = (
 				04EEF29C280469B100E9B650 /* BaseRepository.swift */,
 				04EEF2A128046DAC00E9B650 /* BeersRepository.swift */,
+				04EEF2B1280840E000E9B650 /* ImageRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -200,6 +207,8 @@
 			isa = PBXGroup;
 			children = (
 				04EEF29E28046B2D00E9B650 /* Beers.swift */,
+				04EEF2AD28072A3500E9B650 /* BeerMethod.swift */,
+				04EEF2AF28072A5500E9B650 /* Ingredients.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -226,8 +235,8 @@
 			isa = PBXGroup;
 			children = (
 				04EEF2A72805ADD600E9B650 /* BeersSectionModel.swift */,
-				04EEF2A92805BA9A00E9B650 /* HomeBeersCell.swift */,
 				04EEF2AB2805BAB800E9B650 /* HomeBeersHeaderView.swift */,
+				04EEF2A92805BA9A00E9B650 /* HomeBeersCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -365,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EEF2B028072A5500E9B650 /* Ingredients.swift in Sources */,
 				04EEF262280326CE00E9B650 /* HomeViewController.swift in Sources */,
 				04EEF29F28046B2D00E9B650 /* Beers.swift in Sources */,
 				04EEF29B2804694D00E9B650 /* BeersQ.swift in Sources */,
@@ -375,7 +385,9 @@
 				04EEF29D280469B100E9B650 /* BaseRepository.swift in Sources */,
 				04EEF2A228046DAC00E9B650 /* BeersRepository.swift in Sources */,
 				04EEF2992804673E00E9B650 /* BrewdogCategoryAPI.swift in Sources */,
+				04EEF2AE28072A3500E9B650 /* BeerMethod.swift in Sources */,
 				04EEF2AC2805BAB800E9B650 /* HomeBeersHeaderView.swift in Sources */,
+				04EEF2B2280840E000E9B650 /* ImageRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

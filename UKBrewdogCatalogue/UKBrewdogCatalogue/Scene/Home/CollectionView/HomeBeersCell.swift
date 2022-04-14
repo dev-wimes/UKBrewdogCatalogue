@@ -8,14 +8,22 @@
 import UIKit
 
 import SnapKit
+import RxSwift
 
 final class HomeBeersCell: UICollectionViewCell {
   static let ID: String = "HomeBeersCell"
   
+  private let disposeBag = DisposeBag()
+  private let imageRepository: ImageRepository = ImageRepositoryImpl()
   private let title = UILabel()
+  private let beerImageView = UIImageView()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
+    
+    self.title.numberOfLines = 0
+    self.title.font = .systemFont(ofSize: 12)
+    
     self.setupViews()
   }
   
@@ -23,15 +31,43 @@ final class HomeBeersCell: UICollectionViewCell {
     super.init(coder: coder)
   }
   
-  func configure(title: String) {
+  func configure(imageURL: String?, title: String?) {
+    self.imageRepository.loadImage(url: imageURL)
+      .observe(on: MainScheduler.asyncInstance)
+      .catch { error in
+        print(error)
+        return .empty()
+      }
+      .withUnretained(self)
+      .subscribe(onNext: { owner, image in
+        owner.beerImageView.image = image
+        owner.beerImageView.contentMode = .scaleAspectFit
+      })
+      .disposed(by: self.disposeBag)
+    
     self.title.text = title
   }
   
   private func setupViews() {
+    self.contentView.addSubview(self.beerImageView)
     self.contentView.addSubview(self.title)
     
-    self.title.snp.makeConstraints { make in
-      make.center.equalToSuperview()
+    self.beerImageView.snp.makeConstraints { make in
+      make.width.height.equalTo(50)
+      make.leading.centerY.equalToSuperview()
     }
+    
+    self.title.snp.makeConstraints { make in
+      make.centerY.equalToSuperview()
+      make.leading.equalTo(self.beerImageView.snp.trailing).offset(5)
+      make.trailing.equalToSuperview().offset(-5)
+    }
+  }
+}
+
+extension HomeBeersCell {
+  override func prepareForReuse() {
+    self.beerImageView.image = nil
+    super.prepareForReuse()
   }
 }

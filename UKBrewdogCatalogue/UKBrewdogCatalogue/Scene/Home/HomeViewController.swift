@@ -16,6 +16,7 @@ final class HomeViewController: UIViewController {
   
   private let viewModel = HomeViewModel()
   private let viewDidLoadTrigger = PublishRelay<Void>()
+  private let loadCellsTrigger = PublishRelay<HomeViewModel.LoadAction>()
   
   private lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
@@ -32,6 +33,7 @@ final class HomeViewController: UIViewController {
     self.bind()
     
     self.viewDidLoadTrigger.accept(())
+    self.loadCellsTrigger.accept(.load)
   }
   
   private func setupViews() {
@@ -54,10 +56,21 @@ final class HomeViewController: UIViewController {
   
   private func bind() {
     let output = self.viewModel
-      .transform(input: .init(viewDidLoadTrigger: self.viewDidLoadTrigger))
+      .transform(input: .init(viewDidLoadTrigger: self.viewDidLoadTrigger, loadCellsTrigger: self.loadCellsTrigger))
     
     output.fetchedBeers
       .drive(self.collectionView.rx.items(dataSource: HomeViewController.dataSource))
+      .disposed(by: self.disposeBag)
+    
+    self.collectionView.rx.willDisplayCell
+      .throttle(.microseconds(400), scheduler: MainScheduler.asyncInstance)
+      .withUnretained(self)
+      .subscribe(onNext: { owner, rxInfo in
+        let numberOfItems = owner.collectionView.numberOfItems(inSection: rxInfo.at.section)
+        if rxInfo.at.row == numberOfItems - 1 {
+          owner.loadCellsTrigger.accept(.loadMore(numberOfItems: numberOfItems))
+        }
+      })
       .disposed(by: self.disposeBag)
   }
 }
@@ -71,7 +84,7 @@ extension HomeViewController {
       BeersSectionModel.Item
     ) -> UICollectionViewCell = { dataSource, collectionView, indexPath, item in
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBeersCell.ID, for: indexPath) as! HomeBeersCell
-      cell.configure(title: dataSource[indexPath].name)
+      cell.configure(imageURL: dataSource[indexPath].imageURL, title: dataSource[indexPath].name)
       return cell
     }
     
@@ -110,7 +123,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    return UIEdgeInsets(top: 5, left: 5, bottom: 0, right: 5)
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
