@@ -26,6 +26,7 @@ extension BeersSectionModel: SectionModelType {
 
   struct BeersSectionCellModel {
     let imageURL: String?
+    let number: Int?
     let name: String?
   }
 }

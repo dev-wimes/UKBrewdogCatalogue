@@ -18,7 +18,7 @@ final class HomeViewModel {
   private let beersSectionRelay: BehaviorRelay<[BeersSectionModel]> = .init(value: [])
   private var currentPageRelay: BehaviorRelay<Int> = .init(value: 1)
   private let perPage: Int = 25
-  private var beers: Beers = []
+  private var beersRelay: BehaviorRelay<Beers> = .init(value: [])
   
   struct Input {
     var viewDidLoadTrigger: PublishRelay<Void>
@@ -41,8 +41,15 @@ final class HomeViewModel {
   
   func transform(input: Input) -> Output {
     
-    input.loadCellsTrigger
+    let shouldRequest = Observable.merge(
+      input.loadCellsTrigger.asObservable(),
+      input.viewDidLoadTrigger
+        .map{ LoadAction.load }.asObservable()
+    )
+
+    let request = shouldRequest
       .withUnretained(self)
+    // 밑에서 withLatestFrom을 통해 action을 받는게 싫다면 getBeers 호출 할 때 action을 넘기는 방법도 있음.
       .flatMapLatest { owner, action -> Observable<Beers> in
         switch action {
         case .load, .refresh:
@@ -52,19 +59,31 @@ final class HomeViewModel {
           return owner.getBeers(currentPage: page, perPage: owner.perPage)
         }
       }
-      .withLatestFrom(input.loadCellsTrigger) { items, action in
+      .share()
+    
+    let fetchedBeers = request
+      .catch({ error in
+        return .empty()
+      })
+      .withLatestFrom(shouldRequest) { items, action in
         (action: action, items: items)
       }
-      .withUnretained(self)
-      .map { owner, param -> Beers in
+      .withLatestFrom(self.beersRelay) { param, beers -> Beers in
         switch param.action {
         case .refresh:
-          owner.beers = param.items
+          return param.items
         case .load, .loadMore:
-          owner.beers += param.items
+          var oldValue = beers
+          oldValue += param.items
+          return oldValue
         }
-        return owner.beers
       }
+    
+    fetchedBeers
+      .bind(to: self.beersRelay)
+      .disposed(by: self.disposeBag)
+    
+    fetchedBeers
       .map(self.convertToBeersSectionModel(beers:))
       .withUnretained(self)
       .subscribe(onNext: { owner, beers in
@@ -79,13 +98,17 @@ final class HomeViewModel {
 extension HomeViewModel {
   private func getBeers(currentPage: Int, perPage: Int) -> Observable<Beers> {
     self.beersRepository.fetchBeers(page: currentPage, perPage: perPage)
-      .catch { error in .empty() }
+    // 이런식으로 beers와 action을 같이 넘기는 방법도 있다.
+//      .map { beers in
+//        return (beers, action)
+//      }
   }
   
   private func convertToBeersSectionModel(beers: Beers) -> [BeersSectionModel] {
     let beersSectionCellModels = beers.map{
       BeersSectionModel.BeersSectionCellModel(
         imageURL: $0.imageURL,
+        number: $0.id,
         name: $0.name
       )
     }

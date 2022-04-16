@@ -26,6 +26,7 @@ final class HomeViewController: UIViewController {
     return collectionView
   }()
   
+  // @@todo base vc 만들어서 viewDidLoad를 매번 선언하지 않는 방향으로
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -33,7 +34,6 @@ final class HomeViewController: UIViewController {
     self.bind()
     
     self.viewDidLoadTrigger.accept(())
-    self.loadCellsTrigger.accept(.load)
   }
   
   private func setupViews() {
@@ -84,7 +84,11 @@ extension HomeViewController {
       BeersSectionModel.Item
     ) -> UICollectionViewCell = { dataSource, collectionView, indexPath, item in
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBeersCell.ID, for: indexPath) as! HomeBeersCell
-      cell.configure(imageURL: dataSource[indexPath].imageURL, title: dataSource[indexPath].name)
+      cell.configure(
+        imageURL: dataSource[indexPath].imageURL,
+        number: dataSource[indexPath].number,
+        title: dataSource[indexPath].name
+      )
       return cell
     }
     
