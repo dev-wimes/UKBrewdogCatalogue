@@ -16,7 +16,9 @@ final class HomeViewModel {
   
   private let beersRepository: BeersRepository
   private let beersSectionRelay: BehaviorRelay<[BeersSectionModel]> = .init(value: [])
-  private var currentPageRelay: BehaviorRelay<Int> = .init(value: 1)
+  private let currentPageRelay: BehaviorRelay<Int> = .init(value: 1)
+  // @@ read-only로는 못만드는 걸까?
+  private let perPageRelay: BehaviorRelay<Int> = .init(value: 25)
   private let perPage: Int = 25
   private var beersRelay: BehaviorRelay<Beers> = .init(value: [])
   
@@ -41,49 +43,53 @@ final class HomeViewModel {
   
   func transform(input: Input) -> Output {
     
-    let shouldRequest = Observable.merge(
+    let shouldRequestStream = Observable.merge(
       input.loadCellsTrigger.asObservable(),
-      input.viewDidLoadTrigger
-        .map{ LoadAction.load }.asObservable()
+      input.viewDidLoadTrigger.map{ LoadAction.load }.asObservable()
     )
 
-    let request = shouldRequest
-      .withUnretained(self)
-    // 밑에서 withLatestFrom을 통해 action을 받는게 싫다면 getBeers 호출 할 때 action을 넘기는 방법도 있음.
-      .flatMapLatest { owner, action -> Observable<Beers> in
+    let requestStream = shouldRequestStream
+      .withLatestFrom(self.currentPageRelay, resultSelector: { action, currentPage -> (action: LoadAction, nextPage: Int) in
         switch action {
         case .load, .refresh:
-          return owner.getBeers(currentPage: 1, perPage: owner.perPage)
-        case .loadMore(numberOfItems: let numberOfItems):
-          let page = numberOfItems / owner.perPage + 1
-          return owner.getBeers(currentPage: page, perPage: owner.perPage)
+          return (action: action, nextPage: 1)
+        case .loadMore:
+          return (action: action, nextPage: currentPage + 1)
         }
-      }
-      .share()
-    
-    let fetchedBeers = request
-      .catch({ error in
-        return .empty()
       })
-      .withLatestFrom(shouldRequest) { items, action in
+      .withLatestFrom(self.perPageRelay, resultSelector: { value, perPage -> (nextPage: Int, perPage: Int) in
+        return (nextPage: value.nextPage, perPage: perPage)
+      })
+      .withUnretained(self)
+      .flatMapLatest { owner, value -> Observable<Beers> in
+        return owner.getBeers(page: value.nextPage, perPage: value.perPage)
+      }
+    
+    let beersStream = requestStream
+      .withLatestFrom(shouldRequestStream) { items, action in
         (action: action, items: items)
       }
-      .withLatestFrom(self.beersRelay) { param, beers -> Beers in
+      .withLatestFrom(self.beersRelay) { [weak self] param, beers -> Observable<Beers> in
+        guard let self = self else { return .empty() }
         switch param.action {
-        case .refresh:
-          return param.items
-        case .load, .loadMore:
+        case .refresh, .load:
+          self.currentPageRelay.accept(1)
+          return .just(param.items)
+        case .loadMore:
+          self.currentPageRelay.accept(self.currentPageRelay.value + 1)
           var oldValue = beers
           oldValue += param.items
-          return oldValue
+          return .just(oldValue)
         }
       }
+      .flatMapLatest{ $0 }
+      .share()
     
-    fetchedBeers
+    beersStream
       .bind(to: self.beersRelay)
       .disposed(by: self.disposeBag)
     
-    fetchedBeers
+    beersStream
       .map(self.convertToBeersSectionModel(beers:))
       .withUnretained(self)
       .subscribe(onNext: { owner, beers in
@@ -96,12 +102,15 @@ final class HomeViewModel {
 }
 
 extension HomeViewModel {
-  private func getBeers(currentPage: Int, perPage: Int) -> Observable<Beers> {
-    self.beersRepository.fetchBeers(page: currentPage, perPage: perPage)
-    // 이런식으로 beers와 action을 같이 넘기는 방법도 있다.
-//      .map { beers in
-//        return (beers, action)
-//      }
+  private func getBeers(page: Int, perPage: Int) -> Observable<Beers> {
+    print("@@ page", page)
+    return self.beersRepository.fetchBeers(page: page, perPage: perPage)
+      .flatMap { beers -> Observable<Beers> in
+        beers.isEmpty ? .empty() : .just(beers)
+      }
+      .catch({ error in
+        return .empty()
+      })
   }
   
   private func convertToBeersSectionModel(beers: Beers) -> [BeersSectionModel] {
