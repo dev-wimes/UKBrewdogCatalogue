@@ -103,7 +103,6 @@ final class HomeViewModel {
 
 extension HomeViewModel {
   private func getBeers(page: Int, perPage: Int) -> Observable<Beers> {
-    print("@@ page", page)
     return self.beersRepository.fetchBeers(page: page, perPage: perPage)
       .flatMap { beers -> Observable<Beers> in
         beers.isEmpty ? .empty() : .just(beers)

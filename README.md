@@ -144,3 +144,12 @@ view는 아직 step.1 이라 그런지 별로 설명할게 없다.
 
 
 
+## Step 2
+
+![image-20220419223703297](README.assets/image-20220419223703297.png)
+
+dynamic 셀 구현
+
+누르면 크기에 맞춰서 커짐
+다시 누르면 작아짐 
+id, name, description, food pairing

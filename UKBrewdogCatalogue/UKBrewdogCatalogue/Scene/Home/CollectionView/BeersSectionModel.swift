@@ -7,6 +7,7 @@
 
 import RxDataSources
 
+// @@todo enum으로 변경하기
 struct BeersSectionModel {
   typealias Item = BeersSectionCellModel
   

@@ -84,6 +84,21 @@ final class HomeBeersCell: UICollectionViewCell {
 }
 
 extension HomeBeersCell {
+  
+  override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+    super.preferredLayoutAttributesFitting(layoutAttributes)
+    
+    let targetSize = CGSize(width: layoutAttributes.frame.width, height: 0)
+    
+    layoutAttributes.frame.size = self.contentView.systemLayoutSizeFitting(
+      targetSize,
+      withHorizontalFittingPriority: .required,
+      verticalFittingPriority: .fittingSizeLevel
+    )
+    
+    return layoutAttributes
+  }
+  
   override func prepareForReuse() {
     self.beerImageView.image = nil
     self.disposeBag = .init()
