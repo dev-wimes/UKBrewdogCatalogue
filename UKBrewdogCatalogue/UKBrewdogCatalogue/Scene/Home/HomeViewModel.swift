@@ -14,12 +14,12 @@ import RxCocoa
 final class HomeViewModel {
   private let disposeBag = DisposeBag()
   
+  // 변하면 안되는 값들은 stream으로 선언하는 것 보다는 let 으로 선언해서 Observable.just로 스트림에 넣는 것이 편하다.
+  private let perPage: Int = 25
+  
   private let beersRepository: BeersRepository
   private let beersSectionRelay: BehaviorRelay<[BeersSectionModel]> = .init(value: [])
   private let currentPageRelay: BehaviorRelay<Int> = .init(value: 1)
-  // @@ read-only로는 못만드는 걸까?
-  private let perPageRelay: BehaviorRelay<Int> = .init(value: 25)
-  private let perPage: Int = 25
   private var beersRelay: BehaviorRelay<Beers> = .init(value: [])
   
   struct Input {
@@ -57,7 +57,7 @@ final class HomeViewModel {
           return (action: action, nextPage: currentPage + 1)
         }
       })
-      .withLatestFrom(self.perPageRelay, resultSelector: { value, perPage -> (nextPage: Int, perPage: Int) in
+      .withLatestFrom(Observable.just(self.perPage), resultSelector: { value, perPage -> (nextPage: Int, perPage: Int) in
         return (nextPage: value.nextPage, perPage: perPage)
       })
       .withUnretained(self)

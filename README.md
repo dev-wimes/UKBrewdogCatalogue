@@ -153,3 +153,29 @@ dynamic 셀 구현
 누르면 크기에 맞춰서 커짐
 다시 누르면 작아짐 
 id, name, description, food pairing
+
+
+
+uiflowlayout
+
+```swift
+// 추정값임 아래 Size는 얼마든지 동적으로 변경될 수 있으므로 크게 신경 쓸 필요가 없음
+layout.estimatedItemSize = CGSize(width: self.view.frame.width/2 - 10, height: 50)
+// @@ 이 내용도 한번 찾아서 적어놓기
+layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+```
+
+preferredLayoutAttributesFitting
+
+```swift
+// @@ 이 내용도 한번 찾아서 적어놓자
+// cell의 가로는 고정으로 준다. height가 가변임
+//    let targetSize = CGSize(width: layoutAttributes.frame.width / 2 - 10, height: 0)
+//    layoutAttributes.frame.size = self.contentView.systemLayoutSizeFitting(
+//      targetSize,
+//      withHorizontalFittingPriority: .required,
+//      verticalFittingPriority: .fittingSizeLevel
+//    )
+```
+
+HomeCollectionViewFlowLayout 를 설명할 필요가 있는지는 한번 생각해보자

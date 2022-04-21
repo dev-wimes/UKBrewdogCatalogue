@@ -75,8 +75,8 @@ final class HomeBeersCell: UICollectionViewCell {
     }
     
     self.title.snp.makeConstraints { make in
-//      make.centerY.equalToSuperview()
       make.top.equalTo(self.number.snp.bottom).offset(5)
+      make.bottom.equalToSuperview().offset(-10)
       make.leading.equalTo(self.beerImageView.snp.trailing).offset(5)
       make.trailing.equalToSuperview().offset(-5)
     }
@@ -85,16 +85,19 @@ final class HomeBeersCell: UICollectionViewCell {
 
 extension HomeBeersCell {
   
+  // layout object로부터 주어진 크기에 대해 한번 조정할 기회를 준다.
   override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
     super.preferredLayoutAttributesFitting(layoutAttributes)
-    
-    let targetSize = CGSize(width: layoutAttributes.frame.width, height: 0)
-    
-    layoutAttributes.frame.size = self.contentView.systemLayoutSizeFitting(
-      targetSize,
-      withHorizontalFittingPriority: .required,
-      verticalFittingPriority: .fittingSizeLevel
-    )
+    layoutIfNeeded()
+
+    // width는 flow layout이 준 값으로 고정시키고 height만 동적으로 변경해준다.
+
+    // systemLayoutSizeFitting는 constraint를 준수하면서 가장 적합한(optimal)한 size를 반환한다.
+    // 즉, 아래 코드는 contentView에 있는 constraint를 준수하는 가장 최적의 크기를 받는 것
+    let targetSize = self.contentView.systemLayoutSizeFitting(layoutAttributes.size)
+    var frame = layoutAttributes.frame
+    frame.size.height = ceil(targetSize.height)
+    layoutAttributes.frame = frame
     
     return layoutAttributes
   }

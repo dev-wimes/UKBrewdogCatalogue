@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		045A673D280EF46C0005F3AF /* HomeViewController+RxDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A673C280EF46C0005F3AF /* HomeViewController+RxDataSources.swift */; };
-		045A673F280EF5D00005F3AF /* HomeCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A673E280EF5D00005F3AF /* HomeCollectionViewFlowLayout.swift */; };
 		04EEF25E280326CE00E9B650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF25D280326CE00E9B650 /* AppDelegate.swift */; };
 		04EEF262280326CE00E9B650 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF261280326CE00E9B650 /* HomeViewController.swift */; };
 		04EEF267280326CF00E9B650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EEF266280326CF00E9B650 /* Assets.xcassets */; };
@@ -51,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		045A673C280EF46C0005F3AF /* HomeViewController+RxDataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+RxDataSources.swift"; sourceTree = "<group>"; };
-		045A673E280EF5D00005F3AF /* HomeCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		04EEF25A280326CE00E9B650 /* UKBrewdogCatalogue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UKBrewdogCatalogue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EEF25D280326CE00E9B650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04EEF261280326CE00E9B650 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 				04EEF2A72805ADD600E9B650 /* BeersSectionModel.swift */,
 				04EEF2AB2805BAB800E9B650 /* HomeBeersHeaderView.swift */,
 				04EEF2A92805BA9A00E9B650 /* HomeBeersCell.swift */,
-				045A673E280EF5D00005F3AF /* HomeCollectionViewFlowLayout.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -407,7 +404,6 @@
 				04EEF2AE28072A3500E9B650 /* BeerMethod.swift in Sources */,
 				04EEF2AC2805BAB800E9B650 /* HomeBeersHeaderView.swift in Sources */,
 				04EEF2B2280840E000E9B650 /* ImageRepository.swift in Sources */,
-				045A673F280EF5D00005F3AF /* HomeCollectionViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

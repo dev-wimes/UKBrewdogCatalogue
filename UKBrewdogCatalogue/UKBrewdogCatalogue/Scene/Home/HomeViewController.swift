@@ -21,6 +21,8 @@ final class HomeViewController: UIViewController {
   private lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .vertical
+    // 추정값임 아래 Size는 얼마든지 동적으로 변경될 수 있으므로 크게 신경 쓸 필요가 없음
+    layout.estimatedItemSize = CGSize(width: self.view.frame.width/2 - 10, height: 50)
     
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
     return collectionView
@@ -45,10 +47,6 @@ final class HomeViewController: UIViewController {
     )
     self.collectionView.register(HomeBeersCell.self, forCellWithReuseIdentifier: HomeBeersCell.ID)
     
-    self.collectionView.rx
-      .setDelegate(self)
-      .disposed(by: self.disposeBag)
-    
     self.collectionView.snp.makeConstraints { make in
       make.top.bottom.leading.trailing.equalToSuperview()
     }
@@ -71,6 +69,10 @@ final class HomeViewController: UIViewController {
           owner.loadCellsTrigger.accept(.loadMore(numberOfItems: numberOfItems))
         }
       })
+      .disposed(by: self.disposeBag)
+    
+    self.collectionView.rx
+      .setDelegate(self)
       .disposed(by: self.disposeBag)
   }
 }
