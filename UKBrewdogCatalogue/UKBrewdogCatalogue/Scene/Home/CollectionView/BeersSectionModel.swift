@@ -29,6 +29,8 @@ extension BeersSectionModel: SectionModelType {
     let imageURL: String?
     let number: Int?
     let name: String?
+    let foodPairing: [String]?
+    let description: String?
   }
 }
 

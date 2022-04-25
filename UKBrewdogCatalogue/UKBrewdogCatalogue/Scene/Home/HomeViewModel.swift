@@ -117,7 +117,9 @@ extension HomeViewModel {
       BeersSectionModel.BeersSectionCellModel(
         imageURL: $0.imageURL,
         number: $0.id,
-        name: $0.name
+        name: $0.name,
+        foodPairing: $0.foodParing,
+        description: $0.description
       )
     }
     

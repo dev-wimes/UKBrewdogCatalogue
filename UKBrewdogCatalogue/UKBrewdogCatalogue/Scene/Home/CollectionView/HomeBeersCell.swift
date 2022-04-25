@@ -15,17 +15,20 @@ final class HomeBeersCell: UICollectionViewCell {
   
   private var disposeBag = DisposeBag()
   private let imageRepository: ImageRepository = ImageRepositoryImpl()
-  private let number = UILabel()
-  private let title = UILabel()
   private let beerImageView = UIImageView()
+  private let infoView = UIView()
+  private let numberLabel = UILabel()
+  private let titleLabel = UILabel()
+  private let foodPairingLabel = UILabel()
+  private let descriptionLabel = UILabel()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    self.number.font = .systemFont(ofSize: 10)
+    self.numberLabel.font = .systemFont(ofSize: 10)
     
-    self.title.numberOfLines = 0
-    self.title.font = .systemFont(ofSize: 12)
+    self.titleLabel.numberOfLines = 0
+    self.titleLabel.font = .systemFont(ofSize: 12)
     
     self.setupViews()
   }
@@ -37,7 +40,9 @@ final class HomeBeersCell: UICollectionViewCell {
   func configure(
     imageURL: String?,
     number: Int?,
-    title: String?
+    title: String?,
+    foodPairing: [String]?,
+    description: String?
   ) {
     self.imageRepository.loadImage(url: imageURL)
       .observe(on: MainScheduler.asyncInstance)
@@ -55,31 +60,111 @@ final class HomeBeersCell: UICollectionViewCell {
     
     guard let number = number else { return }
     
-    self.number.text = "\(number)"
-    self.title.text = title
+    self.numberLabel.text = "\(number)"
+    self.titleLabel.text = title
+    self.foodPairingLabel.text = foodPairing?.joined(separator: ", ")
+    self.descriptionLabel.text = description
+  }
+  
+  func didSelectCell() {
+    print("@@ ", #function)
+//    self.contentView.subviews.forEach { $0.constraints.forEach { $0.isActive = false } }
+    self.beerImageView.constraints.forEach { $0.isActive = false }
+  
+    self.beerImageView.snp.makeConstraints { make in
+      make.width.height.equalTo(100)
+      make.top.equalToSuperview().offset(5)
+      make.leading.equalToSuperview()
+    }
+
+//    self.infoView.snp.makeConstraints { make in
+//      make.top.equalTo(self.beerImageView)
+//      make.leading.equalTo(self.beerImageView.snp.trailing).offset(5)
+//      make.trailing.equalToSuperview().offset(-5)
+//      make.bottom.equalToSuperview()
+//    }
+//
+//    self.numberLabel.snp.makeConstraints { make in
+//      make.top.leading.equalToSuperview()
+//    }
+//
+//    self.titleLabel.snp.makeConstraints { make in
+//      make.top.equalTo(self.numberLabel.snp.bottom).offset(5)
+//      make.bottom.equalToSuperview().offset(-10)
+//      make.leading.trailing.equalToSuperview()
+//    }
+    
+    self.foodPairingLabel.isHidden = false
+    self.descriptionLabel.isHidden = false
   }
   
   private func setupViews() {
-    self.contentView.addSubview(self.beerImageView)
-    self.contentView.addSubview(self.number)
-    self.contentView.addSubview(self.title)
+//    self.contentView.addSubview(self.beerImageView)
+//    self.contentView.addSubview(self.numberLabel)
+//    self.contentView.addSubview(self.titleLabel)
+//
+//    self.beerImageView.snp.makeConstraints { make in
+//      make.width.height.equalTo(50)
+//      make.leading.centerY.equalToSuperview()
+//    }
+//
+//    self.numberLabel.snp.makeConstraints { make in
+//      make.top.equalToSuperview().offset(5)
+//      make.leading.equalTo(self.beerImageView.snp.trailing).offset(5)
+//    }
+//
+//    self.titleLabel.snp.makeConstraints { make in
+//      make.top.equalTo(self.numberLabel.snp.bottom).offset(5)
+//      make.bottom.equalToSuperview().offset(-10)
+//      make.leading.equalTo(self.beerImageView.snp.trailing).offset(5)
+//      make.trailing.equalToSuperview().offset(-5)
+//    }
     
+    self.contentView.addSubview(self.beerImageView)
+    self.contentView.addSubview(self.infoView)
+
     self.beerImageView.snp.makeConstraints { make in
       make.width.height.equalTo(50)
-      make.leading.centerY.equalToSuperview()
-    }
-    
-    self.number.snp.makeConstraints { make in
       make.top.equalToSuperview().offset(5)
-      make.leading.equalTo(self.beerImageView.snp.trailing).offset(5)
+      make.leading.equalToSuperview()
     }
-    
-    self.title.snp.makeConstraints { make in
-      make.top.equalTo(self.number.snp.bottom).offset(5)
-      make.bottom.equalToSuperview().offset(-10)
+
+    self.infoView.snp.makeConstraints { make in
+      make.top.equalTo(self.beerImageView)
       make.leading.equalTo(self.beerImageView.snp.trailing).offset(5)
       make.trailing.equalToSuperview().offset(-5)
+      make.bottom.equalToSuperview()
     }
+
+
+    self.infoView.addSubview(self.numberLabel)
+    self.infoView.addSubview(self.titleLabel)
+    self.infoView.addSubview(self.foodPairingLabel)
+    self.infoView.addSubview(self.descriptionLabel)
+
+    self.numberLabel.snp.makeConstraints { make in
+      make.top.leading.equalToSuperview()
+    }
+
+    self.titleLabel.snp.makeConstraints { make in
+      make.top.equalTo(self.numberLabel.snp.bottom).offset(5)
+      make.leading.trailing.equalToSuperview()
+    }
+    
+    
+    self.foodPairingLabel.snp.makeConstraints { make in
+      make.top.equalTo(self.titleLabel.snp.bottom).offset(10)
+      make.leading.trailing.equalToSuperview()
+    }
+    
+    self.descriptionLabel.snp.makeConstraints { make in
+      make.top.equalTo(self.foodPairingLabel.snp.bottom).offset(10)
+      make.leading.trailing.equalToSuperview()
+      make.bottom.equalToSuperview().offset(-10)
+    }
+    
+    self.foodPairingLabel.isHidden = true
+    self.descriptionLabel.isHidden = true
   }
 }
 

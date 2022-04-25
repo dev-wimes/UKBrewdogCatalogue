@@ -22,7 +22,9 @@ extension HomeViewController {
       cell.configure(
         imageURL: dataSource[indexPath].imageURL,
         number: dataSource[indexPath].number,
-        title: dataSource[indexPath].name
+        title: dataSource[indexPath].name,
+        foodPairing: dataSource[indexPath].foodPairing,
+        description: dataSource[indexPath].description
       )
       return cell
     }

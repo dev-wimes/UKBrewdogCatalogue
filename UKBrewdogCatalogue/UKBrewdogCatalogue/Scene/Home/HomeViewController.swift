@@ -71,6 +71,18 @@ final class HomeViewController: UIViewController {
       })
       .disposed(by: self.disposeBag)
     
+    self.collectionView.rx.itemSelected
+      .throttle(.microseconds(400), scheduler: MainScheduler.asyncInstance)
+      .withUnretained(self)
+      .subscribe(onNext: { owner, indexPath in
+        guard let cell = owner.collectionView.cellForItem(at: indexPath) as? HomeBeersCell else { return }
+        
+        cell.didSelectCell()
+        owner.collectionView.invalidateIntrinsicContentSize()
+        owner.collectionView.reloadItems(at: [indexPath])
+      })
+      .disposed(by: self.disposeBag)
+    
     self.collectionView.rx
       .setDelegate(self)
       .disposed(by: self.disposeBag)
